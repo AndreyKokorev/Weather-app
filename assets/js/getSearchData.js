@@ -17,7 +17,7 @@ async function getSearchData() {
   const requestData = await fetch(request_url);
   const json = await requestData.json();
   const location = json.results[0].components;
-  console.log(json)
+
   data.city = location.city || location.town || location.village || location.state;
   data.country = json.results[0].components.country;
   data.timeZone = json.results[0].annotations.timezone.name;

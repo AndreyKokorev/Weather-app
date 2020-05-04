@@ -23,12 +23,6 @@ async function getWeatherData() {
 
   loadBar.style.display = 'none';
 
-  // data.coords.latitude = json.city.coord.lat;
-  // data.coords.longitude = json.city.coord.lon;
-  // data.coordsPrev.latitude = data.coords.latitude;
-  // data.coordsPrev.longitude = data.coords.longitude;
-
-  console.log(json)
   getWeather();
 
   function getWeather() {

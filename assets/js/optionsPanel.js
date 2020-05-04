@@ -1,14 +1,9 @@
-import {
-  data
-} from '../../index.js';
+import {data} from '../../index.js';
 import getDate from './getDate.js';
 import dataRender from './dataRender.js';
 import getSearchData from './getSearchData.js';
 import getWeatherData from './getWeatherData.js';
 import getLocalData from './getLocalData.js';
-
-
-
 
 function optionsPanel() {
   const refresh = document.querySelector('.refresh-button');
@@ -22,7 +17,8 @@ function optionsPanel() {
       await getSearchData();
       await getWeatherData();
       dataRender.startRender();
-    }  
+      data.map.jumpTo({center: [+data.coords.longitude, +data.coords.latitude]})
+    }
   });
   unitsOfMeas();
   language();
@@ -45,7 +41,6 @@ export function unitsOfMeas() {
   });
 
   unitsOfMeas.toFahrenheit = function () {
-    console.log('F')
     const temp = +data.currentTemp.slice(0, data.currentTemp.length - 4);
     const feelsTemp = +data.feelsLike.slice(0, data.feelsLike.length - 4);
     const temp1 = +data.temp1.slice(0, data.temp1.length - 4);
