@@ -4,7 +4,12 @@ import {
 
 async function getWeatherData() {
   const loadBar = document.querySelector('.loadbar-wrapper');
-  const api_url = 'http://api.openweathermap.org/data/2.5/forecast';
+  let api_url;
+  if (location.protocol === 'https') {
+    api_url = 'https://api.openweathermap.org/data/2.5/forecast';
+  } else {
+    api_url = 'http://api.openweathermap.org/data/2.5/forecast';
+  }
   const api_key = 'fbd76ddc484de9e2b423f43fedffe50f';
   const lang = (data.lang === 'be' || data.lang === 'ru') ? 'ru' : 'en';
   const lat = data.coords.latitude;
