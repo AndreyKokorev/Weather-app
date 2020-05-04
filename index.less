@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.main-wrapper {
+  display: grid;
+  grid-template-columns: minmax(3px, 90px) 1fr minmax(3px, 90px);
+  justify-items: center;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: 40px;
+  color: white;
+  background: url(./assets/img/chicago-blue-night-city-dc18cea.jpg);
+  background-size: cover;
+
+  .inner-wrapper {
+    display: grid;
+    grid-column-start: 2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    grid-column-gap: 20px;
+  }
+}
+
+.preferences {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-self: flex-start;
+  grid-gap: 10px;
+  margin-bottom: 20px;
+
+  .refresh-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 5px;
+    background: url(assets/icons/refresh.svg);
+
+    .refresh-button {
+      width:100%;
+      height: 100%;
+      background: transparent;
+    }
+    .refresh-button:active {
+      background: rgba(174, 181, 185, 0.445);
+    }
+    .refresh-button:active svg {
+      transform: rotate(90deg);
+      transition: 0.1s;
+    }
+  }
+
+  .lang-wrapper {
+    position: relative;
+    width: 50px;
+    height: 44px;
+    font-family: inherit;
+    font-size: 18px;
+    color: white;
+    border-radius: 5px;
+    background: rgba(174, 181, 185, 0.445);
+    outline: 0;
+
+    option {
+      background: transparent;
+    }
+
+    .lang {
+      width: 55px;
+      height: 44px;
+      padding-left: 15px;
+      font-size: 18px;
+      line-height: 43px;
+      border-radius: 5px;
+
+    }
+
+    .lang-2 {
+      display: none;
+      background: rgba(174, 181, 185, 0.664);
+      border-radius: 0 0 5px 5px;
+    }
+  }
+
+  .lang-wrapper:hover {
+    border: 1px solid black;
+  }
+
+  .unit-of-measurement {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 44px;
+
+    button {
+      width: 42px;
+      height: 44px;
+      font-family: inherit;
+      font-size: 18px;
+      letter-spacing: 3px;
+      color: white;
+      background: rgba(174, 181, 185, 0.445);
+    }
+
+  }
+}
+
+.search {
+  display: flex;
+  justify-self: flex-end;
+  max-width: 375px;
+  height: 44px;
+  border-radius: 5px;
+  min-width: 295px;
+  overflow: hidden;
+
+  .input-wrapper {
+    display: flex;
+    flex-grow: 1;
+    border-radius: 5px;
+    background: rgba(128, 128, 128, 0.432);
+
+    .mapboxgl-ctrl-geocoder {
+      height: 100%;
+      min-width: 100%;
+      background: transparent;
+    }
+
+    .mapboxgl-ctrl-geocoder--input {
+      height: 100%;
+      color: white;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .mapboxgl-ctrl-geocoder--input::placeholder {
+      color: white;
+    }
+
+    .mapboxgl-ctrl-geocoder--button {
+      margin-top: 4px;
+      background: transparent;
+    }
+
+    .mapboxgl-ctrl-geocoder--icon-search {
+      margin-top: 4px;
+      fill: white;
+      background: transparent;
+    }
+
+    .mapboxgl-ctrl-geocoder--icon-close {
+      fill: white;
+      margin-top: 4px;
+    }
+
+    .suggestions {
+      color: white;
+    }
+
+    &_voice-input {
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      width: 25px;
+      background: transparent;
+    }
+
+  }
+
+  .search-button {
+    width: 100px;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+.data {
+
+  .city {
+    font-size: 2.75rem;
+    line-height: 3.375rem;
+  }
+
+  .time {
+    margin-top: 4px;
+    height: 30px;
+    font-size: 1.5rem;
+  }
+
+  .weather {
+    display: grid;
+    grid-template-columns: auto minmax(0, 150px) auto;
+    justify-content: space-between;
+    margin-top: 5rem;
+
+    &_temperature {
+      font-size: 18.75rem;
+      line-height: 13.75rem;
+    }
+
+    &_visual-description {
+      font-size: 2.5rem;
+
+      .owf {
+        position: relative;
+        top: -55%;
+      }
+
+      img {
+        position: relative;
+        top: -50px;
+        max-width: 162px;
+      }
+    }
+
+    &_atmosphere {
+      display: grid;
+      grid-column-start: 3;
+      align-content: flex-end;
+
+      span {
+        margin-top: 10px;
+        font-size: 1.375rem;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .weather-on-three-days {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4.8rem;
+
+    .day-wrapper {
+      display: grid;
+
+      .day {
+        grid-row-start: 1;
+        text-align: center;
+        font-size: 1.375rem;
+      }
+
+      .temperature {
+        grid-row-start: 2;
+        font-size: 5rem;
+        text-align: right;
+      }
+
+      .owf {
+        grid-column-start: 2;
+        grid-row-start: 2;
+        color: rgba(255, 255, 255, 0.699);
+      }
+
+      owf:before {
+        padding-bottom: 55rem;
+      }
+    }
+  }
+}
+
+.map-wrapper {
+  display: grid;
+  margin-top: 3.75rem;
+
+  #map {
+    justify-self: flex-end;
+    width: 375px;
+    height: 375px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px grey;
+  }
+
+  .coordinates {
+    align-self: flex-start;
+    display: grid;
+    font-size: 1.25rem;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 1165px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .map-wrapper {
+    #map {
+      width: 340px;
+      height: 340px;
+    }
+  }
+}
+
+@media screen and (max-width: 955px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 910px) {
+
+  .main-wrapper {
+    padding-top: 20px;
+    padding-bottom: 5px;
+
+    .inner-wrapper {
+      grid-template-columns: 100%;
+      grid-template-rows: 90px 60px;
+    }
+  }
+
+  .search {
+    justify-self: flex-start;
+  }
+
+  .map-wrapper {
+    #map {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 570px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  html {
+    font-size: 2vw;
+  }
+}
