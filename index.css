@@ -12,6 +12,7 @@ body {
   background: url(./assets/img/311009-alexfas01.jpg);
   background-size: cover;
 }
+
 .main-wrapper {
   position:relative;
   display: grid;
