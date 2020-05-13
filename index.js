@@ -7,6 +7,7 @@ import dataRender from './assets/js/dataRender.js';
 import getWeatherData from './assets/js/getWeatherData.js';
 import mapRender from './assets/js/map-api.js';
 import locationSearch from './assets/js/locationSearch.js';
+import speechRecognition from './assets/js/speechRecognition.js';
 
 export const data = {
   lang: localStorage.getItem('lang') || 'en',
@@ -29,6 +30,7 @@ async function start() {
   mapRender();
   locationSearch();
   optionsPanel();
+  speechRecognition();
 }
 
 

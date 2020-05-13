@@ -185,11 +185,15 @@ body {
 
 .search .input-wrapper_voice-input {
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
-  width: 25px;
-  background: transparent;
+  width: 35px;
 }
+
+.recognition-on{
+ filter: drop-shadow(0 0 1px blue)
+}
+
 
 .search .search-button {
   width: 100px;
