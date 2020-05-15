@@ -7,9 +7,10 @@ import dataRender from './assets/js/dataRender.js';
 import getWeatherData from './assets/js/getWeatherData.js';
 import mapRender from './assets/js/map-api.js';
 import locationSearch from './assets/js/locationSearch.js';
+import speechRecognition from './assets/js/speechRecognition.js';
 
 export const data = {
-  lang: localStorage.getItem('lang') || 'ru',
+  lang: localStorage.getItem('lang') || 'en',
   unitOfMeas: localStorage.getItem('unitOfMeas') || 'C',
   coords: {
     latitude: '',
@@ -29,12 +30,13 @@ async function start() {
   mapRender();
   locationSearch();
   optionsPanel();
+  speechRecognition();
 }
+
+
 
 //to do
 //исправить баг со временем до 12 часов дня
 // с округлением -0.4 получается -0(убрать 0)
 //сделать чтоыб при только при полной загрузке отобразились все данные;
 // доделать геолокацию
-
-
