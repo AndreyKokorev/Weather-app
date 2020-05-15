@@ -1,6 +1,4 @@
-import {
-  data
-} from '../../index.js';
+import {data} from '../../index.js';
 
 function speechRecognition() {
   let btn = document.querySelector('.input-wrapper_voice-input');

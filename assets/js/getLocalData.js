@@ -29,7 +29,7 @@ async function getLocalData() {
     const url = `https://ipinfo.io/json?token=${key}`;
     const location = await fetch(url);
     const reqCoords = await location.json();
-  
+  console.log(document)
     data.coords.latitude = reqCoords.loc.split(',')[0];
     data.coords.longitude = reqCoords.loc.split(',')[1];
   } catch(e) {
